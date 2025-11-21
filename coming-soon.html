@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./style/bootstrap.css">
+    <link rel="stylesheet" href="./style/theme.css">
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <title>Coming Soon - ETX Premier Soccer</title>
+    <style>
+      /* Coming Soon Page Styles */
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+      }
+      
+      /* Slim Top Bar */
+      .coming-soon-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+      }
+      
+      .coming-soon-header .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+      
+      .coming-soon-header .logo-img {
+        height: 2.5rem;
+        width: auto;
+        max-width: 80px;
+        object-fit: contain;
+        display: block;
+      }
+      
+      .coming-soon-header .logo-text {
+        font-family: 'Staatliches', sans-serif;
+        font-size: 1.25rem;
+        color: var(--bs-headline-color);
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+      
+      /* Full-Height Hero Section */
+      .coming-soon-hero {
+        height: calc(100vh - 140px); /* Full viewport minus header and footer */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-image: linear-gradient(rgba(15, 15, 15, 0.65), rgba(128, 0, 0, 0.85)), url('./assets/imgs/hero-img.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 2rem 1.5rem;
+        overflow: hidden;
+      }
+      
+      /* Centered Content Block */
+      .coming-soon-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 0;
+        color: #ffffff !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .coming-soon-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin: 0 0 2rem 0;
+        font-family: 'DM Sans', sans-serif;
+        position: relative;
+        z-index: 11;
+      }
+      
+      .coming-soon-heading {
+        font-size: clamp(3rem, 8vw, 5.5rem);
+        font-weight: 300;
+        line-height: 1.1;
+        margin: 0 0 2rem 0;
+        color: #ffffff !important;
+        letter-spacing: 0.02em;
+        font-family: 'DM Sans', sans-serif;
+        position: relative;
+        z-index: 11;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      .coming-soon-subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.7;
+        color: #ffffff !important;
+        margin: 0;
+        font-weight: 400;
+        font-family: 'DM Sans', sans-serif;
+        max-width: 600px;
+        position: relative;
+        z-index: 11;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      .coming-soon-hero h1,
+      .coming-soon-hero p {
+        color: #ffffff !important;
+      }
+      
+      .coming-soon-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #ffffff;
+        background-color: var(--bs-primary-color);
+        border: 2px solid var(--bs-primary-color);
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-family: 'DM Sans', sans-serif;
+        margin: 4rem 0 3.5rem 0;
+      }
+      
+      .coming-soon-button:hover {
+        background-color: rgba(128, 0, 0, 0.9);
+        border-color: rgba(128, 0, 0, 0.9);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .coming-soon-social-icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 1rem 0 0 0;
+      }
+      
+      .coming-soon-social-icons a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .coming-soon-social-icons a:hover {
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+      
+      .coming-soon-social-icons svg {
+        width: 24px;
+        height: 24px;
+      }
+      
+      /* Minimal Footer */
+      .coming-soon-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .coming-soon-footer p {
+        margin: 0;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: 'DM Sans', sans-serif;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .coming-soon-header {
+          padding: 0.75rem 0;
+        }
+        
+        .coming-soon-header .logo-img {
+          height: 2rem;
+          max-width: 60px;
+        }
+        
+        .coming-soon-header .logo-text {
+          font-size: 1rem;
+        }
+        
+        .coming-soon-hero {
+          height: calc(100vh - 120px);
+          padding-left: 1rem;
+          padding-right: 1rem;
+          background-attachment: scroll;
+        }
+        
+        .coming-soon-content {
+          max-width: 100%;
+        }
+        
+        .coming-soon-label {
+          font-size: 0.65rem;
+          margin: 0 0 1.5rem 0;
+        }
+        
+        .coming-soon-heading {
+          margin: 0 0 1.5rem 0;
+        }
+        
+        .coming-soon-subtitle {
+          margin: 0;
+          font-size: 1rem;
+        }
+        
+        .coming-soon-button {
+          padding: 0.875rem 2rem;
+          font-size: 0.9rem;
+          margin: 3rem 0 2.5rem 0;
+        }
+        
+        .coming-soon-social-icons {
+          margin: 0.75rem 0 0 0;
+        }
+        
+        .coming-soon-footer {
+          padding: 0.75rem 0;
+        }
+        
+        .coming-soon-footer p {
+          font-size: 0.75rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .coming-soon-hero {
+          height: calc(100vh - 110px);
+        }
+        
+        .coming-soon-button {
+          padding: 0.75rem 1.75rem;
+          font-size: 0.85rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Slim Top Bar with Logo -->
+    <header class="coming-soon-header">
+      <div class="container">
+        <div class="logo-container">
+          <a href="etxpremiersoccer.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+            <img src="./assets/imgs/logo.png" alt="ETX Premier Soccer Logo" class="logo-img">
+            <span class="logo-text">ETX Premier Soccer</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Full-Height Hero Section -->
+    <main class="coming-soon-hero">
+      <div class="coming-soon-content">
+        <h1 class="coming-soon-heading">COMING SOON</h1>
+        <p class="coming-soon-subtitle">
+          We're currently working on something exciting for East Texas soccer. We'll be live soon—stay tuned.
+        </p>
+        <a href="mailto:contact@etxpremier.com?subject=Notify Me - Coming Soon" class="coming-soon-button">Notify Me</a>
+        <div class="coming-soon-social-icons">
+          <a href="https://www.facebook.com/share/19zmjBsNhx/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/etxpremier_soccer?igsh=a2cwOTVhb2hiZTJw&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com/@etxpremier?si=zpGSnDx-lxsOZTTD" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="coming-soon-footer">
+      <div class="container">
+        <p>&copy; 2025 ETX Premier Soccer. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
