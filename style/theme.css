@@ -149,10 +149,39 @@ ul {
   color: var(--bs-headline-color) !important;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   font-size: 1.75rem !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
 }
 
 .link-heading h4 {
   font-size: 1.1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+}
+
+/* Ensure quick-link headings are uppercase - Very specific selectors */
+#quick-link .link-heading h4,
+#quick-link .link-heading h4.text-theme-secondary,
+#quick-link .quick-link-glass .link-heading h4,
+#quick-link .quick-link-glass .link-heading h4.text-theme-secondary,
+#quickLinkCarousel .link-heading h4,
+#quickLinkCarousel .link-heading h4.text-theme-secondary {
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+#quick-link .link-heading h2,
+#quick-link .link-heading h2.text-theme-primary,
+#quick-link .quick-link-glass .link-heading h2,
+#quick-link .quick-link-glass .link-heading h2.text-theme-primary,
+#quickLinkCarousel .link-heading h2,
+#quickLinkCarousel .link-heading h2.text-theme-primary {
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  font-size: 1.75rem !important;
 }
 
 .link-subheading {
@@ -274,6 +303,25 @@ ul {
   color: #ffffff !important;
   padding-left: 1.25rem;
   transform: translateX(3px);
+}
+
+/* Mobile Log In Link Styling */
+.mobile-nav-list li:last-child .mobile-nav-link {
+  background: rgba(128, 0, 32, 0.9) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(128, 0, 32, 1) !important;
+  border-radius: 25px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  margin-top: 0.5rem;
+}
+
+.mobile-nav-list li:last-child .mobile-nav-link:hover,
+.mobile-nav-list li:last-child .mobile-nav-link:focus {
+  background: rgba(128, 0, 32, 1) !important;
+  padding-left: 1rem !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(128, 0, 32, 0.4);
 }
 
 .mobile-social-links {
@@ -647,6 +695,32 @@ ul {
   text-stroke: 0.5px #000000;
 }
 
+/* Log In Button Styling */
+.nav-link.btn-login {
+  background: rgba(128, 0, 32, 0.9) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(128, 0, 32, 1) !important;
+  border-radius: 25px !important;
+  padding: 0.5rem 1.25rem !important;
+  font-weight: 600 !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  text-shadow: none !important;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease !important;
+}
+
+.nav-link.btn-login:hover {
+  background: rgba(128, 0, 32, 1) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(128, 0, 32, 0.4);
+}
+
+.nav-link.btn-login::before {
+  display: none;
+}
+
 .theme-cta {
   position: relative;
   display: inline-flex;
@@ -655,17 +729,86 @@ ul {
   gap: 0.5rem;
   transition: all 0.3s ease;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  white-space: nowrap !important;
 }
 
-/* Glassmorphism pill for quick link CTA buttons - only on hover */
+/* Override font-weight for quick-link buttons to match other buttons */
+#quick-link .theme-cta {
+  font-weight: 500 !important;
+}
+
+/* Maroon pill buttons for quick link CTA buttons - Same size, single row */
 #quick-link .theme-cta,
-#quick-link .btn-transparent.theme-cta {
-  background: transparent !important;
+#quick-link .btn-transparent.theme-cta,
+#quick-link .link-CTAbtn .theme-cta,
+#quick-link .link-CTAbtn .btn-transparent.theme-cta,
+#quick-link button.theme-cta,
+#quick-link a.theme-cta {
+  background: var(--bs-primary-color) !important;
+  background-color: #800000 !important;
+  color: #ffffff !important;
   border: none !important;
-  padding: 0 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 9999px !important;
   transition: all 0.3s ease;
-  font-size: 1.1rem !important;
+  font-size: 1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure button elements maintain same styling as anchor tags */
+button.btn-transparent.theme-cta,
+button.btn-outline-theme.theme-cta,
+button.btn.btn-transparent.theme-cta,
+#quick-link button.btn.btn-transparent.theme-cta,
+#quick-link .link-CTAbtn button.btn.btn-transparent.theme-cta,
+.btn-outline-theme.theme-cta {
+  font-family: inherit;
+  cursor: pointer;
+  text-align: inherit;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  background: var(--bs-primary-color) !important;
+  background-color: #800000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem 1.25rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+button.btn-outline-theme.theme-cta:hover {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+button.btn-outline-theme.theme-cta .arrow-icon {
+  fill: #ffffff !important;
+}
+
+button.btn-outline-theme.theme-cta:hover .arrow-icon {
+  fill: #800000 !important;
 }
 
 .theme-cta .arrow-icon {
@@ -681,6 +824,23 @@ ul {
 #quick-link .theme-cta .arrow-icon {
   width: 20px !important;
   height: 20px !important;
+  fill: #ffffff !important;
+}
+
+#quick-link .theme-cta .arrow-icon path {
+  fill: #ffffff !important;
+}
+
+#quick-link .theme-cta:hover .arrow-icon,
+#quick-link .btn-transparent.theme-cta:hover .arrow-icon {
+  fill: var(--bs-primary-color) !important;
+  fill: #800000 !important;
+}
+
+#quick-link .theme-cta:hover .arrow-icon path,
+#quick-link .btn-transparent.theme-cta:hover .arrow-icon path {
+  fill: var(--bs-primary-color) !important;
+  fill: #800000 !important;
 }
 
 /* Enhanced hover effect for all CTA links with arrows */
@@ -701,20 +861,26 @@ ul {
   border-radius: 4px;
 }
 
-/* Quick link CTA hover - show glassmorphism pill */
+/* Quick link CTA hover - white pill with maroon text */
 #quick-link .theme-cta:hover,
-#quick-link .btn-transparent.theme-cta:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.2);
+#quick-link .btn-transparent.theme-cta:hover,
+#quick-link .link-CTAbtn .theme-cta:hover,
+#quick-link .link-CTAbtn .btn-transparent.theme-cta:hover,
+#quick-link button.theme-cta:hover,
+#quick-link a.theme-cta:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: var(--bs-primary-color) !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateX(3px);
   border-radius: 9999px !important;
   padding: 0.5rem 1.25rem !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   font-size: 1.1rem !important;
-  margin: 0 auto !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
 }
 
 /* Hover effect for outline theme buttons - already handled by .btn-outline-theme:hover above */
@@ -778,35 +944,42 @@ ul {
 }
 
 .btn-outline-theme {
-  background-color: transparent !important;
-  border: 2px solid rgba(128, 0, 0, 0.3);
-  color: var(--bs-headline-color) !important;
+  background-color: #800000 !important;
+  background: #800000 !important;
+  border: none !important;
+  color: #ffffff !important;
   transition: all 0.3s ease;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 500;
   padding: 0.75rem 1.25rem;
-  border-radius: 8px;
+  border-radius: 9999px !important;
   text-align: center;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  white-space: nowrap !important;
 }
 
 .btn-outline-theme:hover {
-  background-color: var(--bs-primary-color) !important;
-  background: #800000 !important;
-  color: #ffffff !important;
-  border: 2px solid #800000;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateX(3px);
 }
 
 .btn-outline-theme:hover .arrow-icon {
   rotate: 0deg;
   transform: translateX(4px);
+  fill: #800000 !important;
+}
+
+.btn-outline-theme .arrow-icon {
   fill: #ffffff !important;
 }
 
@@ -866,12 +1039,15 @@ ul {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/imgs/hero-img.png');
+  background-image: url('../assets/imgs/mainframe.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
   will-change: transform;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 #hero-section {
@@ -953,6 +1129,16 @@ section .py-3 {
     padding-bottom: 0;
   }
   
+  /* Ensure hero banner is centered on mobile */
+  #hero-section-banner {
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
   #quick-link,
   #about-us,
   #counter-section,
@@ -964,6 +1150,233 @@ section .py-3 {
   #contact {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+
+  /* Unified Mobile Carousel Card Styles - Ensures Consistency */
+  [id$="Carousel"] .carousel-item {
+    padding: 0.5rem 0.05rem;
+  }
+
+  [id$="Carousel"] [class*="-card-glass"],
+  [id$="Carousel"] [class*="-link-glass"] {
+    min-height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Mobile Carousel Enhancements */
+  #quickLinkCarousel {
+    touch-action: pan-y;
+    padding: 0;
+    width: 100%;
+  }
+
+  #quickLinkCarousel .carousel-control-prev,
+  #quickLinkCarousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  #quickLinkCarousel .carousel-control-prev {
+    left: 5px;
+  }
+
+  #quickLinkCarousel .carousel-control-next {
+    right: 5px;
+  }
+
+  #quickLinkCarousel .carousel-item {
+    padding: 0.5rem 0.05rem;
+  }
+
+  #quickLinkCarousel .quick-link-glass {
+    min-height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Ensure button pill is visible on mobile with texture */
+  #quickLinkCarousel .link-CTAbtn {
+    margin-top: 1rem !important;
+  }
+
+  #quickLinkCarousel .link-CTAbtn .theme-cta,
+  #quickLinkCarousel .link-CTAbtn .btn-transparent.theme-cta {
+    padding: 0.6rem 1.4rem !important;
+    background: var(--bs-primary-color) !important;
+    background-color: #800000 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  #quickLinkCarousel .link-CTAbtn .theme-cta:hover,
+  #quickLinkCarousel .link-CTAbtn .btn-transparent.theme-cta:hover {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--bs-primary-color) !important;
+    color: #800000 !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Leagues Carousel Mobile Enhancements */
+  #leaguesCarousel {
+    touch-action: pan-y;
+    padding: 0;
+    width: 100%;
+  }
+
+  #leaguesCarousel .carousel-control-prev,
+  #leaguesCarousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  #leaguesCarousel .carousel-control-prev {
+    left: 5px;
+  }
+
+  #leaguesCarousel .carousel-control-next {
+    right: 5px;
+  }
+
+  #leaguesCarousel .carousel-item {
+    padding: 0.5rem 0.05rem;
+  }
+
+  #leaguesCarousel .league-card-glass {
+    min-height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Ensure button pill is visible on mobile with texture */
+  #leaguesCarousel .league-card-footer {
+    margin-top: 1rem !important;
+  }
+
+  #leaguesCarousel .league-card-footer .btn-outline-theme.theme-cta {
+    padding: 0.6rem 1.4rem !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid rgba(128, 0, 32, 0.5) !important;
+    border-radius: 25px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+  }
+
+  #leaguesCarousel .league-card-footer .btn-outline-theme.theme-cta:hover {
+    border: 2px solid rgba(128, 0, 32, 0.7) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+  }
+
+  /* Field Rentals Carousel Mobile Enhancements */
+  #fieldRentalsCarousel {
+    touch-action: pan-y;
+    padding: 0;
+    width: 100%;
+  }
+
+  #fieldRentalsCarousel .carousel-control-prev,
+  #fieldRentalsCarousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  #fieldRentalsCarousel .carousel-control-prev {
+    left: 5px;
+  }
+
+  #fieldRentalsCarousel .carousel-control-next {
+    right: 5px;
+  }
+
+  #fieldRentalsCarousel .carousel-item {
+    padding: 0.5rem 0.05rem;
+  }
+
+  #fieldRentalsCarousel .field-rental-card-glass {
+    min-height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Coaching & Training Carousel Mobile Enhancements */
+  #coachingTrainingCarousel {
+    touch-action: pan-y;
+    padding: 0;
+    width: 100%;
+  }
+
+  #coachingTrainingCarousel .carousel-control-prev,
+  #coachingTrainingCarousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  #coachingTrainingCarousel .carousel-control-prev {
+    left: 5px;
+  }
+
+  #coachingTrainingCarousel .carousel-control-next {
+    right: 5px;
+  }
+
+  #coachingTrainingCarousel .carousel-item {
+    padding: 0.5rem 0.05rem;
+  }
+
+  #coachingTrainingCarousel .coaching-card-glass {
+    min-height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  /* Contact Carousel Mobile Enhancements */
+  #contactCarousel {
+    touch-action: pan-y;
+    padding: 0;
+    width: 100%;
+  }
+
+  #contactCarousel .carousel-control-prev,
+  #contactCarousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  #contactCarousel .carousel-control-prev {
+    left: 5px;
+  }
+
+  #contactCarousel .carousel-control-next {
+    right: 5px;
+  }
+
+  #contactCarousel .carousel-item {
+    padding: 0.5rem 0.05rem;
+  }
+
+  #contactCarousel .contact-card-glass {
+    min-height: 300px;
+    max-width: 100%;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  #contactCarousel .contact-map-wrapper iframe {
+    height: 250px;
   }
 }
 
@@ -1153,12 +1566,14 @@ section .py-3 {
 .league-card-list-two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem 2rem;
+  gap: 0.15rem 2rem;
   column-gap: 2rem;
+  row-gap: 0.15rem;
 }
 
 .league-card-list-two-columns li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.15rem;
+  line-height: 1.4;
 }
 
 .league-card-footer {
@@ -1426,6 +1841,463 @@ section .py-3 {
   box-shadow: 0 30px 40px -5px rgba(0, 0, 0, 0.15), 0 15px 20px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* Unified Carousel Card Styles - Ensures Consistency Across All Sections */
+[id$="Carousel"] .carousel-item {
+  padding: 0.5rem 0.1rem;
+}
+
+[id$="Carousel"] [class*="-card-glass"],
+[id$="Carousel"] [class*="-link-glass"] {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Carousel Styles */
+#quickLinkCarousel {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+#quickLinkCarousel .carousel-inner {
+  padding: 0;
+}
+
+#quickLinkCarousel .carousel-item {
+  padding: 0.5rem 0.1rem;
+}
+
+#quickLinkCarousel .quick-link-glass {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure button is visible in carousel with texture/border */
+#quickLinkCarousel .link-CTAbtn .theme-cta,
+#quickLinkCarousel .link-CTAbtn .btn-transparent.theme-cta {
+  padding: 0.6rem 1.5rem !important;
+  background: var(--bs-primary-color) !important;
+  background-color: #800000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem;
+  transition: all 0.3s ease !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+#quickLinkCarousel .link-CTAbtn .theme-cta:hover,
+#quickLinkCarousel .link-CTAbtn .btn-transparent.theme-cta:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: var(--bs-primary-color) !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  padding: 0.6rem 1.5rem !important;
+}
+
+#quickLinkCarousel .carousel-control-prev,
+#quickLinkCarousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(128, 0, 32, 0.8);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+#quickLinkCarousel .carousel-control-prev {
+  left: 10px;
+}
+
+#quickLinkCarousel .carousel-control-next {
+  right: 10px;
+}
+
+#quickLinkCarousel .carousel-control-prev:hover,
+#quickLinkCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(128, 0, 32, 1);
+}
+
+#quickLinkCarousel .carousel-control-prev-icon,
+#quickLinkCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#quickLinkCarousel .carousel-indicators {
+  margin-bottom: 1rem;
+}
+
+#quickLinkCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 32, 0.5);
+  border: none;
+  margin: 0 5px;
+}
+
+#quickLinkCarousel .carousel-indicators button.active {
+  background-color: rgba(128, 0, 32, 1);
+}
+
+/* Leagues Carousel Styles */
+#leaguesCarousel {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+#leaguesCarousel .carousel-inner {
+  padding: 0;
+}
+
+#leaguesCarousel .carousel-item {
+  padding: 0.5rem 0.1rem;
+}
+
+#leaguesCarousel .league-card-glass {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure button is visible in leagues carousel with texture/border */
+#leaguesCarousel .league-card-footer .btn-outline-theme.theme-cta {
+  padding: 0.6rem 1.5rem !important;
+  background: #800000 !important;
+  background-color: #800000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem;
+  transition: all 0.3s ease !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+#leaguesCarousel .league-card-footer .btn-outline-theme.theme-cta:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  padding: 0.6rem 1.5rem !important;
+}
+
+#leaguesCarousel .league-card-footer .btn-outline-theme.theme-cta .arrow-icon {
+  fill: #ffffff !important;
+}
+
+#leaguesCarousel .league-card-footer .btn-outline-theme.theme-cta:hover .arrow-icon {
+  fill: #800000 !important;
+}
+
+#leaguesCarousel .carousel-control-prev,
+#leaguesCarousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(128, 0, 32, 0.8);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+#leaguesCarousel .carousel-control-prev {
+  left: 10px;
+}
+
+#leaguesCarousel .carousel-control-next {
+  right: 10px;
+}
+
+#leaguesCarousel .carousel-control-prev:hover,
+#leaguesCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(128, 0, 32, 1);
+}
+
+#leaguesCarousel .carousel-control-prev-icon,
+#leaguesCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#leaguesCarousel .carousel-indicators {
+  margin-bottom: 1rem;
+}
+
+#leaguesCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 32, 0.5);
+  border: none;
+  margin: 0 5px;
+}
+
+#leaguesCarousel .carousel-indicators button.active {
+  background-color: rgba(128, 0, 32, 1);
+}
+
+/* Field Rentals Carousel Styles */
+#fieldRentalsCarousel {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+#fieldRentalsCarousel .carousel-inner {
+  padding: 0;
+}
+
+#fieldRentalsCarousel .carousel-item {
+  padding: 0.5rem 0.1rem;
+}
+
+#fieldRentalsCarousel .field-rental-card-glass {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#fieldRentalsCarousel .carousel-control-prev,
+#fieldRentalsCarousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(128, 0, 32, 0.8);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+#fieldRentalsCarousel .carousel-control-prev {
+  left: 10px;
+}
+
+#fieldRentalsCarousel .carousel-control-next {
+  right: 10px;
+}
+
+#fieldRentalsCarousel .carousel-control-prev:hover,
+#fieldRentalsCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(128, 0, 32, 1);
+}
+
+#fieldRentalsCarousel .carousel-control-prev-icon,
+#fieldRentalsCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#fieldRentalsCarousel .carousel-indicators {
+  margin-bottom: 1rem;
+}
+
+#fieldRentalsCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 32, 0.5);
+  border: none;
+  margin: 0 5px;
+}
+
+#fieldRentalsCarousel .carousel-indicators button.active {
+  background-color: rgba(128, 0, 32, 1);
+}
+
+/* Coaching & Training Carousel Styles */
+#coachingTrainingCarousel {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+#coachingTrainingCarousel .carousel-inner {
+  padding: 0;
+}
+
+#coachingTrainingCarousel .carousel-item {
+  padding: 0.5rem 0.1rem;
+}
+
+#coachingTrainingCarousel .coaching-card-glass {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#coachingTrainingCarousel .carousel-control-prev,
+#coachingTrainingCarousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(128, 0, 32, 0.8);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+#coachingTrainingCarousel .carousel-control-prev {
+  left: 10px;
+}
+
+#coachingTrainingCarousel .carousel-control-next {
+  right: 10px;
+}
+
+#coachingTrainingCarousel .carousel-control-prev:hover,
+#coachingTrainingCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(128, 0, 32, 1);
+}
+
+#coachingTrainingCarousel .carousel-control-prev-icon,
+#coachingTrainingCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#coachingTrainingCarousel .carousel-indicators {
+  margin-bottom: 1rem;
+}
+
+#coachingTrainingCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 32, 0.5);
+  border: none;
+  margin: 0 5px;
+}
+
+#coachingTrainingCarousel .carousel-indicators button.active {
+  background-color: rgba(128, 0, 32, 1);
+}
+
+/* Contact Carousel Styles */
+#contactCarousel {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+#contactCarousel .carousel-inner {
+  padding: 0;
+}
+
+#contactCarousel .carousel-item {
+  padding: 0.5rem 0.1rem;
+}
+
+#contactCarousel .contact-card-glass {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  min-height: 300px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#contactCarousel .contact-map-wrapper iframe {
+  height: 300px;
+}
+
+#contactCarousel .carousel-control-prev,
+#contactCarousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(128, 0, 32, 0.8);
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+#contactCarousel .carousel-control-prev {
+  left: 10px;
+}
+
+#contactCarousel .carousel-control-next {
+  right: 10px;
+}
+
+#contactCarousel .carousel-control-prev:hover,
+#contactCarousel .carousel-control-next:hover {
+  opacity: 1;
+  background-color: rgba(128, 0, 32, 1);
+}
+
+#contactCarousel .carousel-control-prev-icon,
+#contactCarousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+#contactCarousel .carousel-indicators {
+  margin-bottom: 1rem;
+}
+
+#contactCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 32, 0.5);
+  border: none;
+  margin: 0 5px;
+}
+
+#contactCarousel .carousel-indicators button.active {
+  background-color: rgba(128, 0, 32, 1);
+}
+
 .link-container-inner {
   position: relative;
   width: 100%;
@@ -1463,14 +2335,32 @@ section .py-3 {
   width: 100%;
 }
 
-/* Ensure consistent button margins within CTA containers */
+/* Ensure consistent button margins within CTA containers - Same size, no wrapping */
+#quick-link .link-CTAbtn {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
 #quick-link .link-CTAbtn .btn,
 #quick-link .link-CTAbtn .theme-cta,
-#quick-link .link-CTAbtn a {
+#quick-link .link-CTAbtn a,
+#quick-link .link-CTAbtn button {
   margin: 0 auto !important;
-  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0.5rem 1rem !important;
   display: inline-flex !important;
   justify-content: center !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 /* Standardized CTA Button Sizing and Positioning Only */
@@ -1535,19 +2425,21 @@ section .py-3 {
   transition: all 0.3s ease;
 }
 
-/* Glassmorphism pill on hover when card background is maroon */
+/* White pill with maroon text on hover when card background is maroon */
 .quick-link-glass:hover .theme-cta,
 .quick-link-glass:hover .btn-transparent.theme-cta {
-  background: rgba(255, 255, 255, 0.2) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.25);
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: var(--bs-primary-color) !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 9999px !important;
   padding: 0.5rem 1.25rem !important;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   font-size: 1.1rem !important;
-  margin: 0 auto !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
 }
 
 .quick-link-glass:hover .arrow-icon {
@@ -1591,6 +2483,16 @@ section .py-3 {
 }
 
 @media (max-width: 480px) {
+  /* Ensure hero banner is centered on small mobile devices */
+  #hero-section-banner {
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  
   #quick-link .theme-cta,
   #quick-link .btn-transparent.theme-cta {
     font-size: 0.95rem !important;
@@ -1793,24 +2695,28 @@ section .py-3 {
 
 /* Book a Training Session button - white background */
 #coaching-training .btn-outline-theme.theme-cta {
-  background-color: #ffffff !important;
-  background: #ffffff !important;
-  color: var(--bs-headline-color) !important;
-  border: 2px solid rgba(128, 0, 0, 0.3) !important;
+  background-color: #800000 !important;
+  background: #800000 !important;
+  color: #ffffff !important;
+  border: none !important;
 }
 
 #coaching-training .btn-outline-theme.theme-cta:hover {
-  background-color: var(--bs-primary-color) !important;
-  background: #800000 !important;
-  color: #ffffff !important;
-  border: 2px solid #800000 !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #800000 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateX(3px);
 }
 
 #coaching-training .btn-outline-theme.theme-cta:hover .arrow-icon {
   rotate: 0deg;
   transform: translateX(4px);
+  fill: #800000 !important;
+}
+
+#coaching-training .btn-outline-theme.theme-cta .arrow-icon {
   fill: #ffffff !important;
 }
 
@@ -2202,43 +3108,47 @@ right: unset;  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   z-index: 10;
   overflow: hidden;
   text-decoration: none;
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: #171717;
-  background-color: #f9fafb;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff !important;
+  background-color: #800000 !important;
   min-width: 180px;
-  border: 2px solid #f9fafb;
+  border: none !important;
   border-radius: 9999px;
   padding: 0.5rem 1rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
   isolation: isolate;
 }
 
-.hero-modern-btn::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: all 0.7s ease;
-  left: -100%;
-  border-radius: 9999px;
-  background-color: #800000;
-  z-index: -1;
-  aspect-ratio: 1;
+/* Ensure button elements maintain same styling as anchor tags */
+button.hero-modern-btn {
+  color: #ffffff !important;
+  background-color: #800000 !important;
+  border: none !important;
+  font-family: inherit;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 1rem !important;
 }
 
-.hero-modern-btn:hover::before {
-  width: 100%;
-  left: 0;
-  transform: scale(1.5);
-  transition: all 0.7s ease;
+button.hero-modern-btn:hover {
+  background-color: #ffffff !important;
+  color: #800000 !important;
+  border: none !important;
+}
+
+.hero-modern-btn::before {
+  display: none;
 }
 
 .hero-modern-btn:hover {
-  color: #f9fafb;
+  background-color: #ffffff !important;
+  color: #800000 !important;
+  border: 2px solid #ffffff !important;
 }
 
 /* Glassmorphism button style - white text with pill glass effect */
@@ -2393,17 +3303,17 @@ right: unset;  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 
 .hero-modern-btn:hover .hero-btn-icon {
   transform: rotate(90deg);
-  background-color: #f9fafb;
+  background-color: transparent;
   border: none;
 }
 
 .hero-btn-path {
-  fill: #1f2937;
+  fill: #ffffff;
   transition: fill 0.3s ease;
 }
 
 .hero-modern-btn:hover .hero-btn-path {
-  fill: #1f2937;
+  fill: #800000;
 }
 
 .form-control {
@@ -2930,7 +3840,7 @@ footer .list-unstyled .dropdown-toggle::after {
 .awb-news-ticker-item {
   display: inline-flex;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 50px;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff !important;
@@ -2955,5 +3865,99 @@ footer .list-unstyled .dropdown-toggle::after {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Mobile Modal Styling */
+@media (max-width: 768px) {
+  /* Make modals fullscreen on mobile */
+  #tournamentRegisterModal .modal-dialog,
+  #leaguesModal .modal-dialog {
+    margin: 0;
+    max-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  #tournamentRegisterModal .modal-content,
+  #leaguesModal .modal-content {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #tournamentRegisterModal .modal-body,
+  #leaguesModal .modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    height: calc(100vh - 48px);
+    min-height: calc(100vh - 48px);
+  }
+
+  #tournamentRegisterModal .modal-header,
+  #leaguesModal .modal-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    flex-shrink: 0;
+    min-height: 48px;
+    max-height: 48px;
+  }
+
+  #tournamentRegisterModal .modal-title,
+  #leaguesModal .modal-title {
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  #tournamentRegisterModal .btn-close,
+  #leaguesModal .btn-close {
+    padding: 0.25rem;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  /* Make iframes responsive on mobile - zoomed out to fit width */
+  #tournamentRegisterModal .modal-body,
+  #leaguesModal .modal-body {
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  #tournamentRegisterModal iframe,
+  #leaguesModal iframe {
+    width: 117.65% !important; /* 100% / 0.85 to compensate for scale */
+    height: 117.65% !important; /* 100% / 0.85 to compensate for scale */
+    min-height: calc((100vh - 48px) * 1.1765) !important;
+    border: none !important;
+    display: block;
+    transform: scale(0.85);
+    transform-origin: top left;
+    overflow: auto;
+  }
+
+  /* Ensure modal backdrop is visible */
+  .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Fix for iOS Safari viewport issues */
+  @supports (-webkit-touch-callout: none) {
+    #tournamentRegisterModal .modal-body,
+    #leaguesModal .modal-body {
+      height: -webkit-fill-available;
+      min-height: -webkit-fill-available;
+    }
+
+    #tournamentRegisterModal iframe,
+    #leaguesModal iframe {
+      min-height: -webkit-fill-available !important;
+    }
   }
 }

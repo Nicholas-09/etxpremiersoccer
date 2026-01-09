@@ -14,12 +14,12 @@
   <body>
     <div class="awb-news-ticker-wrapper">
       <div class="awb-news-ticker-container">
-        <div class="awb-news-ticker-item">COMING SOON... FEATURES AND BUTTONS WILL BE AVAILABLE SOON.</div>
-        <div class="awb-news-ticker-item">FOLLOW US ON SOCIAL TO STAY UPDATED.</div>
-        <div class="awb-news-ticker-item">ETX PREMIER SOCCER – NEW FEATURES LAUNCHING SOON.</div>
-        <div class="awb-news-ticker-item">COMING SOON... FEATURES AND BUTTONS WILL BE AVAILABLE SOON.</div>
-        <div class="awb-news-ticker-item">FOLLOW US ON SOCIAL TO STAY UPDATED.</div>
-        <div class="awb-news-ticker-item">ETX PREMIER SOCCER – NEW FEATURES LAUNCHING SOON.</div>
+        <div class="awb-news-ticker-item">TOURNAMENTS REGISTRATION NOW OPEN</div>
+        <div class="awb-news-ticker-item">LEAGUES START ON JANUARY 28TH</div>
+        <div class="awb-news-ticker-item">FOLLOW US ON SOCIAL TO STAY UPDATED</div>
+        <div class="awb-news-ticker-item">TOURNAMENTS REGISTRATION NOW OPEN</div>
+        <div class="awb-news-ticker-item">LEAGUES START ON JANUARY 28TH</div>
+        <div class="awb-news-ticker-item">FOLLOW US ON SOCIAL TO STAY UPDATED</div>
       </div>
     </div>
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-blur sticky-top">
@@ -69,6 +69,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link btn-login" href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer">Log In</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -80,6 +83,7 @@
               <li><a class="mobile-nav-link" href="#about-us">About</a></li>
               <li><a class="mobile-nav-link" href="#leagues">Play</a></li>
               <li><a class="mobile-nav-link" href="#contact">Contact</a></li>
+              <li><a class="mobile-nav-link" href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer">Log In</a></li>
             </ul>
           </div>
         </div>
@@ -114,7 +118,7 @@
             <p class="mb-0 hero-subheading">Join adult and youth leagues, tournaments, and training programs</p>
           </div>
           <div class="hero-cta-buttons mt-5 d-flex justify-content-center gap-3 flex-wrap">
-            <a href="coming-soon.html" class="hero-modern-btn">
+            <a href="#leaguesModal" class="hero-modern-btn" data-bs-toggle="modal">
               View Leagues
               <svg class="hero-btn-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" class="hero-btn-path"></path>
@@ -134,7 +138,8 @@
     <!-- Quick Link Section -->
 <section id="quick-link" class="w-100">
   <div class="quick-link-content container">
-    <div class="row w-100">
+    <!-- Desktop Grid View (hidden on mobile) -->
+    <div class="row w-100 d-none d-md-flex">
       <div class="col-xl-3 col-md-6 mb-4 mb-xl-0">
         <div class="glass quick-link-glass">
           <div class="link-container-inner">
@@ -147,7 +152,7 @@
               <p class="text-theme-secondary">Year-round competition</p>
             </div>
             <div class="link-CTAbtn mb-3">
-              <a href="coming-soon.html" class="btn btn-transparent theme-cta p-0">
+              <a href="#leaguesModal" class="btn btn-transparent theme-cta p-0" data-bs-toggle="modal">
                 See League Details
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -169,7 +174,7 @@
               <p class="text-theme-secondary">Seasonal events & cups</p>
             </div>
             <div class="link-CTAbtn mb-3">
-              <a href="coming-soon.html" class="btn btn-transparent theme-cta p-0">
+              <a href="#tournamentRegisterModal" class="btn btn-transparent theme-cta p-0" data-bs-toggle="modal">
                 Upcoming Tournaments
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -224,6 +229,116 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Carousel View (hidden on desktop) -->
+    <div id="quickLinkCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="glass quick-link-glass">
+            <div class="link-container-inner">
+              <div class="link-heading mb-3">
+                <h4 class="text-theme-secondary">our</h4>
+                <h2 class="text-theme-primary">Leagues</h2>
+              </div>
+              <div class="link-subheading mb-3">
+                <p class="text-theme-secondary">Adult & Youth leagues</p>
+                <p class="text-theme-secondary">Year-round competition</p>
+              </div>
+              <div class="link-CTAbtn mb-3">
+                <a href="#leaguesModal" class="btn btn-transparent theme-cta p-0" data-bs-toggle="modal">
+                  See League Details
+                  <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass quick-link-glass">
+            <div class="link-container-inner">
+              <div class="link-heading mb-3">
+                <h4 class="text-theme-secondary">Tournaments</h4>
+                <h2 class="text-theme-primary">& Events</h2>
+              </div>
+              <div class="link-subheading mb-3">
+                <p class="text-theme-secondary">Weekend tournaments</p>
+                <p class="text-theme-secondary">Seasonal events & cups</p>
+              </div>
+              <div class="link-CTAbtn mb-3">
+                <a href="#tournamentRegisterModal" class="btn btn-transparent theme-cta p-0" data-bs-toggle="modal">
+                  Upcoming Tournaments
+                  <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass quick-link-glass">
+            <div class="link-container-inner">
+              <div class="link-heading mb-3">
+                <h4 class="text-theme-secondary">Field</h4>
+                <h2 class="text-theme-primary">Rentals</h2>
+              </div>
+              <div class="link-subheading mb-3">
+                <p class="text-theme-secondary">Team training sessions</p>
+                <p class="text-theme-secondary">Parties & events</p>
+              </div>
+              <div class="link-CTAbtn mb-3">
+                <a href="coming-soon.html" class="btn btn-transparent theme-cta p-0">
+                  Check Availability
+                  <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass quick-link-glass">
+            <div class="link-container-inner">
+              <div class="link-heading mb-3">
+                <h4 class="text-theme-secondary">Coaching</h4>
+                <h2 class="text-theme-primary">& Training</h2>
+              </div>
+              <div class="link-subheading mb-3">
+                <p class="text-theme-secondary">1-on-1 & group training</p>
+                <p class="text-theme-secondary">Youth development programs</p>
+              </div>
+              <div class="link-CTAbtn mb-3">
+                <a href="coming-soon.html" class="btn btn-transparent theme-cta p-0">
+                  Book Training
+                  <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#quickLinkCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#quickLinkCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#quickLinkCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#quickLinkCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#quickLinkCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#quickLinkCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -266,7 +381,7 @@
     <!-- Right column: image + highlight cards -->
     <div class="etx-about__right">
       <div class="etx-about__image-wrapper">
-        <img src="./assets/imgs/familyphoto.png" alt="ETX Premier Soccer family photo">
+        <img src="./assets/imgs/aboutus.webp" alt="ETX Premier Soccer family photo">
       </div>
       <div class="etx-about__cards">
         <div class="etx-about__card">
@@ -330,7 +445,8 @@
       <h4 class="text-theme-secondary">our</h4>
       <h2 class="leagues-title text-theme-primary">Leagues</h2>
     </div>
-    <div class="leagues-grid">
+    <!-- Desktop Grid View (hidden on mobile) -->
+    <div class="leagues-grid d-none d-md-grid">
       <!-- Adult Leagues Card -->
       <article class="league-card league-card--adult">
         <div class="glass league-card-glass">
@@ -343,12 +459,12 @@
             <ul class="league-card-list text-theme-secondary mb-3">
               <li>Co-ed Leagues (men and women)</li>
               <li>Men's Leagues (Competitive and Casual)</li>
-              <li>Men's Veteran's League (40+)</li>
+              <li>Men's Veteran's League (35+)</li>
               <li>Women's Leagues</li>
             </ul>
             <footer class="league-card-footer">
               <p class="league-card-meta text-theme-secondary mb-0"><strong>Season Format:</strong> <!-- TODO: Insert actual season schedule --> Year-round leagues with seasonal breaks</p>
-              <a href="coming-soon.html" class="btn btn-outline-theme theme-cta">
+              <a href="#leaguesModal" class="btn btn-outline-theme theme-cta" data-bs-toggle="modal">
                 Get League Info
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -381,7 +497,7 @@
             </ul>
             <footer class="league-card-footer">
               <p class="league-card-meta text-theme-secondary mb-0"><strong>Program Focus:</strong> Skill development, sportsmanship, and age-appropriate competition</p>
-              <a href="coming-soon.html" class="btn btn-outline-theme theme-cta">
+              <a href="#leaguesModal" class="btn btn-outline-theme theme-cta" data-bs-toggle="modal">
                 See League Details
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -391,6 +507,87 @@
           </div>
         </div>
       </article>
+    </div>
+
+    <!-- Mobile Carousel View (hidden on desktop) -->
+    <div id="leaguesCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <article class="league-card league-card--adult">
+            <div class="glass league-card-glass">
+              <div class="league-card-inner">
+                <header class="league-card-header">
+                  <span class="league-card-tag">Adults 18+</span>
+                  <h3 class="league-card-title text-theme-primary">Adult Leagues</h3>
+                </header>
+                <p class="league-card-summary text-theme-secondary mb-3">Join our competitive adult leagues designed for players 18 and older. We offer multiple divisions to accommodate all skill levels.</p>
+                <ul class="league-card-list text-theme-secondary mb-3">
+                  <li>Co-ed Leagues (men and women)</li>
+                  <li>Men's Leagues (Competitive and Casual)</li>
+                  <li>Men's Veteran's League (35+)</li>
+                  <li>Women's Leagues</li>
+                </ul>
+                <footer class="league-card-footer">
+                  <p class="league-card-meta text-theme-secondary mb-0"><strong>Season Format:</strong> <!-- TODO: Insert actual season schedule --> Year-round leagues with seasonal breaks</p>
+                  <a href="#leaguesModal" class="btn btn-outline-theme theme-cta" data-bs-toggle="modal">
+                    Get League Info
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                      <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                    </svg>
+                  </a>
+                </footer>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="carousel-item">
+          <article class="league-card league-card--youth">
+            <div class="glass league-card-glass">
+              <div class="league-card-inner">
+                <header class="league-card-header">
+                  <span class="league-card-tag">Ages 8–17</span>
+                  <h3 class="league-card-title text-theme-primary">Youth Leagues</h3>
+                </header>
+                <p class="league-card-summary text-theme-secondary mb-3">Our youth leagues focus on skill development, teamwork, and fun in a safe, structured environment.</p>
+                <ul class="league-card-list league-card-list-two-columns text-theme-secondary mb-3">
+                  <li>U5</li>
+                  <li>U7</li>
+                  <li>U10</li>
+                  <li>U12</li>
+                  <li>Boys U14</li>
+                  <li>Girls U14</li>
+                  <li>High School Boys (U18)</li>
+                  <li>High School Girls (U18)</li>
+                  <li>High School Co-Ed (U18)</li>
+                </ul>
+                <footer class="league-card-footer">
+                  <p class="league-card-meta text-theme-secondary mb-0"><strong>Program Focus:</strong> Skill development, sportsmanship, and age-appropriate competition</p>
+                  <a href="#leaguesModal" class="btn btn-outline-theme theme-cta" data-bs-toggle="modal">
+                    See League Details
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                      <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                    </svg>
+                  </a>
+                </footer>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#leaguesCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#leaguesCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#leaguesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#leaguesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      </div>
     </div>
     <div class="text-center mt-4">
       <p class="text-theme-secondary"><!-- TODO: Insert actual pricing for leagues here --> Registration fees and schedules vary by league. Contact us for current pricing and availability.</p>
@@ -431,7 +628,13 @@
                 </ul>
               </div>
             </div>
-            <div class="mt-4">
+            <div class="mt-4 d-flex gap-3 flex-wrap justify-content-center">
+              <button type="button" class="btn btn-outline-theme theme-cta" data-bs-toggle="modal" data-bs-target="#tournamentRegisterModal">
+                Register
+                <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                  <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                </svg>
+              </button>
               <a href="coming-soon.html" class="btn btn-outline-theme theme-cta">
                 Host Your Event
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
@@ -457,7 +660,8 @@
       <h4 class="text-theme-secondary">Field</h4>
       <h2 class="text-theme-primary">Rentals</h2>
     </div>
-    <div class="row">
+    <!-- Desktop Grid View (hidden on mobile) -->
+    <div class="row d-none d-md-flex">
       <div class="col-xl-4 mb-4">
         <div class="glass field-rental-card-glass">
           <div class="field-rental-card-inner">
@@ -486,6 +690,54 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Carousel View (hidden on desktop) -->
+    <div id="fieldRentalsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="glass field-rental-card-glass">
+            <div class="field-rental-card-inner">
+              <h3 class="text-theme-primary mb-3">Team Training</h3>
+              <p class="text-theme-secondary mb-3">Rent our indoor field for team training sessions. Perfect for practice, drills, and small-sided scrimmages.</p>
+              <p class="text-theme-secondary"><strong>Ideal for:</strong> Club teams, school teams, and organized groups</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass field-rental-card-glass">
+            <div class="field-rental-card-inner">
+              <h3 class="text-theme-primary mb-3">Birthday Parties</h3>
+              <p class="text-theme-secondary mb-3">Celebrate your special day with a fun indoor soccer party! We provide the field and you bring the celebration.</p>
+              <p class="text-theme-secondary"><strong>Includes:</strong> Field time, basic equipment, and party space</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass field-rental-card-glass">
+            <div class="field-rental-card-inner">
+              <h3 class="text-theme-primary mb-3">Company Events</h3>
+              <p class="text-theme-secondary mb-3">Host team-building events, corporate tournaments, or company outings at our facility.</p>
+              <p class="text-theme-secondary"><strong>Perfect for:</strong> Corporate team building and employee engagement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#fieldRentalsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#fieldRentalsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#fieldRentalsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#fieldRentalsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#fieldRentalsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
     <div class="text-center mt-4">
       <a href="coming-soon.html" class="btn btn-outline-theme theme-cta">
         Request a Rental
@@ -506,7 +758,8 @@
       <h4 class="text-theme-secondary">Coaching</h4>
       <h2 class="text-theme-primary">& Training</h2>
     </div>
-    <div class="row">
+    <!-- Desktop Grid View (hidden on mobile) -->
+    <div class="row d-none d-md-flex">
       <div class="col-xl-4 mb-4">
         <div class="glass coaching-card-glass">
           <div class="coaching-card-inner">
@@ -533,6 +786,54 @@
             <p class="text-theme-secondary"><strong>Ages:</strong> Programs available for all youth age groups</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Mobile Carousel View (hidden on desktop) -->
+    <div id="coachingTrainingCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="glass coaching-card-glass">
+            <div class="coaching-card-inner">
+              <h3 class="text-theme-primary mb-3">1-on-1 Training</h3>
+              <p class="text-theme-secondary mb-3">Personalized training sessions tailored to your specific needs and goals. Work one-on-one with our experienced coaches to improve your skills.</p>
+              <p class="text-theme-secondary"><strong>Focus Areas:</strong> Technical skills, tactical understanding, and physical conditioning</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass coaching-card-glass">
+            <div class="coaching-card-inner">
+              <h3 class="text-theme-primary mb-3">Small Group Trainings (not age limited)</h3>
+              <p class="text-theme-secondary mb-3">Join small group training sessions for focused skill development in a collaborative environment.</p>
+              <p class="text-theme-secondary"><strong>Benefits:</strong> Peer learning, competitive drills, and cost-effective training</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="glass coaching-card-glass">
+            <div class="coaching-card-inner">
+              <h3 class="text-theme-primary mb-3">Youth Development</h3>
+              <p class="text-theme-secondary mb-3">Comprehensive youth development programs designed to build fundamental skills and love for the game.</p>
+              <p class="text-theme-secondary"><strong>Ages:</strong> Programs available for all youth age groups</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#coachingTrainingCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#coachingTrainingCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#coachingTrainingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#coachingTrainingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#coachingTrainingCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
     </div>
     <div class="text-center mt-4">
@@ -665,7 +966,8 @@
       <h4 class="text-theme-secondary">Contact</h4>
       <h2 class="text-theme-primary">Us</h2>
     </div>
-    <div class="contact-grid">
+    <!-- Desktop Grid View (hidden on mobile) -->
+    <div class="contact-grid d-none d-md-grid">
       <div class="contact-card contact-info-card d-flex">
         <div class="glass contact-card-glass">
           <div class="contact-card-inner">
@@ -719,16 +1021,16 @@
             <h3 class="text-theme-primary mb-4">Send Us a Message</h3>
             <form id="contact-form">
               <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
               </div>
               <div class="mb-3">
-                <input type="tel" class="form-control" placeholder="Your Phone">
+                <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
               </div>
               <div class="mb-3">
-                <select class="form-control" required>
+                <select name="inquiry" class="form-control" required>
                   <option value="">Select Inquiry Type</option>
                   <option value="leagues">League Information</option>
                   <option value="tournaments">Tournaments & Events</option>
@@ -738,7 +1040,7 @@
                 </select>
               </div>
               <div class="mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
               </div>
               <button type="submit" class="btn btn-outline-theme theme-cta">
                 Send Message
@@ -749,6 +1051,115 @@
             </form>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Mobile Carousel View (hidden on desktop) -->
+    <div id="contactCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="contact-card contact-info-card d-flex">
+            <div class="glass contact-card-glass">
+              <div class="contact-card-inner">
+                <h3 class="text-theme-primary mb-4">Get in Touch</h3>
+                <div class="contact-info mb-4">
+                  <p class="text-theme-secondary mb-3">
+                    <strong>Location:</strong><br>
+                    <a href="https://maps.google.com/?q=3080+State+Hwy+155,+Palestine,+TX+75803" target="_blank" rel="noopener noreferrer" class="text-theme-secondary" style="text-decoration: underline;">3080 State Hwy 155, Palestine, TX 75803</a>
+                  </p>
+                  <p class="text-theme-secondary mb-3">
+                    <strong>Phone:</strong><br>
+                    <a href="tel:9033732748" class="text-theme-secondary" style="text-decoration: underline;">(903) 373-2748</a>
+                  </p>
+                  <p class="text-theme-secondary mb-3">
+                    <strong>Email:</strong><br>
+                    <!-- TODO: Insert real email address --> <a href="mailto:contact@etxpremier.com" class="text-theme-secondary" style="text-decoration: underline;">contact@etxpremier.com</a>
+                  </p>
+                  <p class="text-theme-secondary">
+                    <strong>Operating Hours</strong><br>
+                    Mon–Thu: 5:30 PM – 10:30 PM<br>
+                    Fri: 5:30 PM – 11:30 PM<br>
+                    Sat & Sun: 2:00 PM – 11:30 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="contact-card contact-map-card d-flex">
+            <div class="glass contact-card-glass">
+              <div class="contact-card-inner">
+                <h3 class="text-theme-primary mb-4">Find Us</h3>
+                <div class="contact-map-wrapper">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.933031802016!2d-95.6553507!3d31.7045811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864a5bc1bb3a2a05%3A0x7a4f045adc41b8f0!2s3080%20State%20Hwy%20155%2C%20Palestine%2C%20TX%2075803!5e0!3m2!1sen!2sus!4v1732145570000!5m2!1sen!2sus"
+                    width="100%"
+                    height="400"
+                    style="border:0; border-radius: 12px;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="contact-card contact-form-card d-flex">
+            <div class="glass contact-card-glass">
+              <div class="contact-card-inner">
+                <h3 class="text-theme-primary mb-4">Send Us a Message</h3>
+                <form id="contact-form-mobile">
+                  <div class="mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="tel" name="phone" class="form-control" placeholder="Your Phone">
+                  </div>
+                  <div class="mb-3">
+                    <select name="inquiry" class="form-control" required>
+                      <option value="">Select Inquiry Type</option>
+                      <option value="leagues">League Information</option>
+                      <option value="tournaments">Tournaments & Events</option>
+                      <option value="rentals">Field Rentals</option>
+                      <option value="coaching">Coaching & Training</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-outline-theme theme-cta">
+                    Send Message
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
+                      <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#contactCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#contactCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#contactCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
     </div>
   </div>
@@ -911,11 +1322,71 @@
         });
       });
 
-      // Contact form submission (placeholder)
+      // Contact form submission - sends email to contact@etxpremier.com
       document.getElementById('contact-form')?.addEventListener('submit', function(e) {
         e.preventDefault();
-        // TODO: Implement actual form submission
-        alert('Thank you for your message! We will get back to you soon.');
+        
+        const formData = new FormData(this);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
+        const inquiry = formData.get('inquiry') || '';
+        const message = formData.get('message') || '';
+        
+        // Construct email subject
+        const subject = encodeURIComponent(`Contact Form: ${inquiry || 'General Inquiry'}`);
+        
+        // Construct email body
+        let body = `Name: ${name}\n`;
+        body += `Email: ${email}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        body += `Inquiry Type: ${inquiry}\n\n`;
+        body += `Message:\n${message}`;
+        
+        const bodyEncoded = encodeURIComponent(body);
+        
+        // Create mailto link
+        const mailtoLink = `mailto:contact@etxpremier.com?subject=${subject}&body=${bodyEncoded}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show confirmation
+        alert('Your email client will open. Please send the email to contact us. Thank you!');
+        this.reset();
+      });
+
+      // Mobile contact form submission - sends email to contact@etxpremier.com
+      document.getElementById('contact-form-mobile')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
+        const inquiry = formData.get('inquiry') || '';
+        const message = formData.get('message') || '';
+        
+        // Construct email subject
+        const subject = encodeURIComponent(`Contact Form: ${inquiry || 'General Inquiry'}`);
+        
+        // Construct email body
+        let body = `Name: ${name}\n`;
+        body += `Email: ${email}\n`;
+        if (phone) body += `Phone: ${phone}\n`;
+        body += `Inquiry Type: ${inquiry}\n\n`;
+        body += `Message:\n${message}`;
+        
+        const bodyEncoded = encodeURIComponent(body);
+        
+        // Create mailto link
+        const mailtoLink = `mailto:contact@etxpremier.com?subject=${subject}&body=${bodyEncoded}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show confirmation
+        alert('Your email client will open. Please send the email to contact us. Thank you!');
         this.reset();
       });
     </script>
@@ -1158,5 +1629,35 @@
         chatPanel.style.right = "-420px";
       };
     </script>
+
+    <!-- Tournament Registration Modal -->
+    <div class="modal fade" id="tournamentRegisterModal" tabindex="-1" aria-labelledby="tournamentRegisterModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="tournamentRegisterModalLabel">Tournament Registration</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="padding: 0;">
+            <iframe src="https://etxpremiersoccer.ezleagues.ezfacility.com/tournaments.aspx?facility_id=2488&framed=1&styled=1" width="100%" height="600" scrolling="yes" frameborder="0" name="ezframeTournaments" id="ezframeTournaments" style="border: none; overflow: auto;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Leagues Modal -->
+    <div class="modal fade" id="leaguesModal" tabindex="-1" aria-labelledby="leaguesModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-fullscreen-md-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="leaguesModalLabel">Our Leagues</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="padding: 0;">
+            <iframe src="https://etxpremiersoccer.ezleagues.ezfacility.com/leagues.aspx?facility_id=2488&framed=1&styled=1" width="100%" height="600" scrolling="yes" frameborder="0" name="ezframeLeagues" id="ezframeLeagues" style="border: none; overflow: auto;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
