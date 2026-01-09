@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="./style/bootstrap.css">
     <link rel="stylesheet" href="./style/theme.css">
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <!-- Preload hero background image for smooth loading -->
+    <link rel="preload" as="image" href="./assets/imgs/hero-img.png" fetchpriority="high">
     <title>ETX Premier Soccer - Premier Indoor Soccer Arena in East Texas</title>
   </head>
   <body>
+    <div class="site-wrapper">
     <div class="awb-news-ticker-wrapper">
       <div class="awb-news-ticker-container">
         <div class="awb-news-ticker-item">TOURNAMENTS REGISTRATION NOW OPEN</div>
@@ -975,15 +978,15 @@
             <div class="contact-info mb-4">
               <p class="text-theme-secondary mb-3">
                 <strong>Location:</strong><br>
-                <a href="https://maps.google.com/?q=3080+State+Hwy+155,+Palestine,+TX+75803" target="_blank" rel="noopener noreferrer" class="text-theme-secondary" style="text-decoration: underline;">3080 State Hwy 155, Palestine, TX 75803</a>
+                <a href="https://maps.google.com/?q=3080+State+Hwy+155,+Palestine,+TX+75803" target="_blank" rel="noopener noreferrer" class="text-theme-secondary text-underline">3080 State Hwy 155, Palestine, TX 75803</a>
               </p>
               <p class="text-theme-secondary mb-3">
                 <strong>Phone:</strong><br>
-                <a href="tel:9033732748" class="text-theme-secondary" style="text-decoration: underline;">(903) 373-2748</a>
+                <a href="tel:9033732748" class="text-theme-secondary text-underline">(903) 373-2748</a>
               </p>
               <p class="text-theme-secondary mb-3">
                 <strong>Email:</strong><br>
-                <!-- TODO: Insert real email address --> <a href="mailto:contact@etxpremier.com" class="text-theme-secondary" style="text-decoration: underline;">contact@etxpremier.com</a>
+                <!-- TODO: Insert real email address --> <a href="mailto:contact@etxpremier.com" class="text-theme-secondary text-underline">contact@etxpremier.com</a>
               </p>
               <p class="text-theme-secondary">
                 <strong>Operating Hours</strong><br>
@@ -1183,7 +1186,7 @@
           <li><a href="#home" class="text-theme-secondary">Home</a></li>
           <li><a href="#about-us" class="text-theme-secondary">About</a></li>
           <li class="dropdown">
-            <a class="text-theme-secondary dropdown-toggle" href="#" id="footerPlayDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; cursor: pointer;">
+            <a class="text-theme-secondary dropdown-toggle text-no-decoration" href="#" id="footerPlayDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Play
             </a>
             <ul class="dropdown-menu" aria-labelledby="footerPlayDropdown">
@@ -1217,9 +1220,9 @@
           </a>
         </div>
         <p class="text-theme-secondary mt-3">
-          <a href="https://maps.google.com/?q=3080+State+Hwy+155,+Palestine,+TX+75803" target="_blank" rel="noopener noreferrer" class="text-theme-secondary" style="text-decoration: underline;">3080 State Hwy 155, Palestine, TX 75803</a><br>
-          Phone: <a href="tel:9033732748" class="text-theme-secondary" style="text-decoration: underline;">(903) 373-2748</a><br>
-          <!-- TODO: Insert real email --> Email: <a href="mailto:contact@etxpremier.com" class="text-theme-secondary" style="text-decoration: underline;">contact@etxpremier.com</a><br>
+          <a href="https://maps.google.com/?q=3080+State+Hwy+155,+Palestine,+TX+75803" target="_blank" rel="noopener noreferrer" class="text-theme-secondary text-underline">3080 State Hwy 155, Palestine, TX 75803</a><br>
+          Phone: <a href="tel:9033732748" class="text-theme-secondary text-underline">(903) 373-2748</a><br>
+          <!-- TODO: Insert real email --> Email: <a href="mailto:contact@etxpremier.com" class="text-theme-secondary text-underline">contact@etxpremier.com</a><br>
           <strong>Operating Hours</strong><br>
           Mon–Thu: 5:30 PM – 10:30 PM<br>
           Fri: 5:30 PM – 11:30 PM<br>
@@ -1233,6 +1236,8 @@
     </div>
   </div>
 </footer>
+    </div>
+    <!-- End site-wrapper -->
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="./script/bootstrap.bundle.min.js"></script>
@@ -1250,7 +1255,6 @@
         const button = document.getElementById('mobileMenuToggle');
         
         if (!menu) {
-          console.error('Mobile menu not found');
           return false;
         }
         
@@ -1443,31 +1447,150 @@
     });
     </script>
     <script>
-      // Parallax effect for hero banner
-    window.addEventListener('scroll', function() {
-      const scrolled = window.pageYOffset;
+      // Preload hero image to prevent flickering on mobile
+      (function() {
+        'use strict';
       const heroBanner = document.getElementById('hero-section-banner');
-      const aboutUsSection = document.getElementById('about-us');
+        if (!heroBanner) return;
+        
+        const heroImg = new Image();
+        
+        function showBanner() {
+          heroBanner.classList.add('loaded');
+        }
+        
+        heroImg.onload = showBanner;
+        heroImg.onerror = showBanner; // Show banner even if image fails
+        
+        // Start loading the image
+        heroImg.src = './assets/imgs/hero-img.png';
+        
+        // Fallback: show banner after 500ms if image hasn't loaded
+        setTimeout(function() {
+          if (!heroBanner.classList.contains('loaded')) {
+            showBanner();
+          }
+        }, 500);
+      })();
       
-      if (heroBanner && aboutUsSection) {
-        // Get the position where parallax should stop (right before "Our Story" section with small buffer)
-        const parallaxSpeed = 0.5;
-        const buffer = 100; // Small buffer to ensure it stops before the section
-        const stopParallaxAt = aboutUsSection.offsetTop - buffer;
+      // Ultra-smooth parallax effect - Apple-level performance
+      (function() {
+        'use strict';
         
-        // Calculate the maximum parallax value (when we reach the stopping point)
-        const maxParallax = stopParallaxAt * parallaxSpeed;
+        const heroBg = document.getElementById('hero-section-banner');
+      const aboutUsSection = document.getElementById('about-us');
+        if (!heroBg || !aboutUsSection) return;
         
-        // Only apply parallax if we haven't reached the stopping point
-        if (scrolled < stopParallaxAt) {
-          // Move background at slower speed for parallax effect
-          heroBanner.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        // Performance optimizations
+        const PARALLAX_SPEED = 0.5;
+        const BUFFER = 384; // 4 inches
+        let stopParallaxAt = 0;
+        let maxParallax = 0;
+        let currentOffset = 0;
+        let targetOffset = 0;
+        let rafId = null;
+        let isActive = true;
+        
+        // Cache scroll position
+        let scrollY = 0;
+        let lastScrollY = 0;
+        
+        // Calculate stop point once and on resize
+        function calculateStopPoint() {
+          const rect = aboutUsSection.getBoundingClientRect();
+          scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          stopParallaxAt = rect.top + scrollY - BUFFER;
+          maxParallax = Math.round(stopParallaxAt * PARALLAX_SPEED);
+        }
+        
+        // Ultra-smooth animation loop using RAF
+        function animate() {
+          if (!isActive) return;
+          
+          // Smooth interpolation for buttery smooth movement
+          const diff = targetOffset - currentOffset;
+          if (Math.abs(diff) > 0.1) {
+            currentOffset += diff * 0.15; // Smooth easing
+            currentOffset = Math.round(currentOffset * 100) / 100; // Round to avoid sub-pixel
         } else {
-          // Lock the parallax at the maximum position
-          heroBanner.style.transform = `translateY(${maxParallax}px)`;
+            currentOffset = targetOffset;
+          }
+          
+          // Apply transform with GPU acceleration
+          heroBg.style.transform = `translate3d(0, ${currentOffset}px, 0)`;
+          
+          rafId = requestAnimationFrame(animate);
+        }
+        
+        // Update target offset based on scroll
+        function updateParallax() {
+          scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollY < stopParallaxAt) {
+            targetOffset = Math.round(scrollY * PARALLAX_SPEED);
+          } else {
+            targetOffset = maxParallax;
+          }
+        }
+        
+        // Optimized scroll handler - only update target, RAF handles animation
+        function onScroll() {
+          if (Math.abs(window.pageYOffset - lastScrollY) < 1) return; // Skip tiny movements
+          lastScrollY = window.pageYOffset;
+          updateParallax();
+        }
+        
+        // Initialize
+        function init() {
+          calculateStopPoint();
+          updateParallax();
+          currentOffset = targetOffset;
+          heroBg.style.transform = `translate3d(0, ${currentOffset}px, 0)`;
+          
+          // Start continuous animation loop
+          if (!rafId) {
+            rafId = requestAnimationFrame(animate);
+          }
+        }
+        
+        // Wait for DOM and layout
+        if (document.readyState === 'complete') {
+          setTimeout(init, 0);
+        } else {
+          window.addEventListener('load', function() {
+            setTimeout(init, 100);
+          });
+        }
+        
+        // Passive scroll listener for maximum performance
+        window.addEventListener('scroll', onScroll, { passive: true, capture: false });
+        
+        // Recalculate on resize with debounce
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function() {
+            calculateStopPoint();
+            updateParallax();
+          }, 150);
+        }, { passive: true });
+        
+        // Pause animation when tab is hidden for battery optimization
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            isActive = false;
+            if (rafId) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+          } else {
+            isActive = true;
+            if (!rafId) {
+              rafId = requestAnimationFrame(animate);
         }
       }
     });
+      })();
     </script>
 
     <!-- Ravenna-Style AI Chat Widget (Coming Soon Mode) -->
