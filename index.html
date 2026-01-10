@@ -83,8 +83,32 @@
           <div class="mobile-menu-content">
             <ul class="mobile-nav-list">
               <li><a class="mobile-nav-link" href="#home">Home</a></li>
-              <li><a class="mobile-nav-link" href="#about-us">About</a></li>
-              <li><a class="mobile-nav-link" href="#leagues">Play</a></li>
+              <li class="mobile-dropdown">
+                <a class="mobile-nav-link mobile-dropdown-toggle" href="#" onclick="toggleMobileDropdown(event, this); return false;">
+                  About
+                  <svg class="mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </a>
+                <ul class="mobile-dropdown-menu">
+                  <li><a class="mobile-nav-link mobile-dropdown-item" href="#about-us">About Us</a></li>
+                  <li><a class="mobile-nav-link mobile-dropdown-item" href="#rules-policies">Our Rules & Policies</a></li>
+                </ul>
+              </li>
+              <li class="mobile-dropdown">
+                <a class="mobile-nav-link mobile-dropdown-toggle" href="#" onclick="toggleMobileDropdown(event, this); return false;">
+                  Play
+                  <svg class="mobile-dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </a>
+                <ul class="mobile-dropdown-menu">
+                  <li><a class="mobile-nav-link mobile-dropdown-item" href="#leagues">Leagues</a></li>
+                  <li><a class="mobile-nav-link mobile-dropdown-item" href="#tournaments">Tournaments & Events</a></li>
+                  <li><a class="mobile-nav-link mobile-dropdown-item" href="#field-rentals">Field Rentals</a></li>
+                  <li><a class="mobile-nav-link mobile-dropdown-item" href="#coaching-training">Coaching & Training</a></li>
+                </ul>
+              </li>
               <li><a class="mobile-nav-link" href="#contact">Contact</a></li>
               <li><a class="mobile-nav-link" href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer">Log In</a></li>
             </ul>
@@ -127,8 +151,14 @@
                 <path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" class="hero-btn-path"></path>
               </svg>
             </a>
-            <a href="coming-soon.html" class="hero-modern-btn hero-modern-btn-simple">
+            <a href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer" class="hero-modern-btn hero-modern-btn-simple d-none d-md-inline-flex">
               Book a Field
+              <svg class="hero-btn-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" class="hero-btn-path"></path>
+              </svg>
+            </a>
+            <a href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer" class="hero-modern-btn hero-modern-btn-simple d-md-none">
+              Log In
               <svg class="hero-btn-icon" viewBox="0 0 16 19" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z" class="hero-btn-path"></path>
               </svg>
@@ -199,7 +229,7 @@
               <p class="text-theme-secondary">Parties & events</p>
             </div>
             <div class="link-CTAbtn mb-3">
-              <a href="coming-soon.html" class="btn btn-transparent theme-cta p-0">
+              <a href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer" class="btn btn-transparent theme-cta p-0">
                 Check Availability
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -638,7 +668,7 @@
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
                 </svg>
               </button>
-              <a href="coming-soon.html" class="btn btn-outline-theme theme-cta">
+              <a href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-theme theme-cta">
                 Host Your Event
                 <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
                   <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -742,7 +772,7 @@
       </div>
     </div>
     <div class="text-center mt-4">
-      <a href="coming-soon.html" class="btn btn-outline-theme theme-cta">
+      <a href="https://19681.ezfacility.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-theme theme-cta">
         Request a Rental
         <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000000" viewBox="0 0 256 256">
           <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
@@ -1295,9 +1325,38 @@
         }
       });
       
-      // Close menu when clicking nav links
+      // Toggle mobile dropdown
+      function toggleMobileDropdown(e, element) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+        
+        const dropdown = element.closest('.mobile-dropdown');
+        if (!dropdown) return;
+        
+        const isActive = dropdown.classList.contains('active');
+        
+        // Close all other dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(function(dd) {
+          if (dd !== dropdown) {
+            dd.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        if (isActive) {
+          dropdown.classList.remove('active');
+        } else {
+          dropdown.classList.add('active');
+        }
+        
+        return false;
+      }
+      
+      // Close menu when clicking nav links (but not dropdown toggles)
       document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('mobile-nav-link')) {
+        if (e.target.classList.contains('mobile-nav-link') && !e.target.classList.contains('mobile-dropdown-toggle') && !e.target.closest('.mobile-dropdown-toggle')) {
           const menu = document.querySelector('.mobile-menu-overlay');
           const button = document.getElementById('mobileMenuToggle');
           
